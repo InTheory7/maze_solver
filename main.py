@@ -32,6 +32,10 @@ def main():
     cell1.draw(x1, y1, x2, y2)
     cell2.draw(x2, y2, x3, y3)
 
+    # Draw a line between the two cells:
+    # cell1.draw_move(cell2)        # Red
+    cell1.draw_move(cell2, True)    # Grey
+
     # Wait for window to close
     win.wait_for_close()
 
