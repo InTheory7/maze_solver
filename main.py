@@ -20,23 +20,17 @@ def main():
     # win.draw_line(line3,"green")
 
     # Draw some cells:
-    pt1 = Point(10,10)
-    pt2 = Point(110,10)
-    pt3 = Point(210,10)
-    pt4 = Point(10,110)
-    pt5 = Point(110,110)
-    pt6 = Point(210,110)
-    pt7 = Point(10,210)
-    pt8 = Point(110,210)
-    pt9 = Point(210,210)
+    x1, y1 = (10, 10)
+    x2, y2 = (110,110)
+    x3, y3 = (210,210)
 
-    cell1 = Cell(pt1,pt5,win)
+    cell1 = Cell(win)
     cell1.bottom_wall = False
-    cell2 = Cell(pt5,pt9,win)
+    cell2 = Cell(win)
     cell2.top_wall = False
     cell2.left_wall = False
-    cell1.draw()
-    cell2.draw()
+    cell1.draw(x1, y1, x2, y2)
+    cell2.draw(x2, y2, x3, y3)
 
     # Wait for window to close
     win.wait_for_close()
