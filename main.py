@@ -44,6 +44,7 @@ def main():
     cell_size_x = 40
     cell_size_y = 40
     maze = Maze(x1, y1, num_rows, num_cols, cell_size_x,cell_size_y,win)
+    maze._break_entrance_and_exit()
 
     # Wait for window to close
     win.wait_for_close()

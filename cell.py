@@ -24,18 +24,26 @@ class Cell:
         tr = Point(self._x2,self._y1)
         br = Point(self._x2,self._y2)
         bl = Point(self._x1,self._y2)
+        left_line = Line(bl,tl)
+        top_line = Line(tl,tr)
+        right_line = Line(tr,br)
+        bottom_line = Line(br,bl)
         if self.left_wall:
-            left_line = Line(bl,tl)
             self._win.draw_line(left_line,"black")
+        else:
+            self._win.draw_line(left_line,"#d9d9d9")
         if self.top_wall:
-            top_line = Line(tl,tr)
             self._win.draw_line(top_line,"black")
+        else:
+            self._win.draw_line(top_line,"#d9d9d9")
         if self.right_wall:
-            right_line = Line(tr,br)
             self._win.draw_line(right_line,"black")
+        else:
+            self._win.draw_line(right_line,"#d9d9d9")
         if self.bottom_wall:
-            bottom_line = Line(br,bl)
             self._win.draw_line(bottom_line,"black")
+        else:
+            self._win.draw_line(bottom_line,"#d9d9d9")
 
     def draw_move(self, to_cell, undo=False):
         curr_cen_x = (self._x1 + self._x2)/2
