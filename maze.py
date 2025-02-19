@@ -2,7 +2,9 @@ from cell import Cell
 from time import sleep
 
 class Maze():
-    def __init__(self, x1, y1, num_rows, num_cols, cell_size_x,cell_size_y,win):
+    def __init__(self, x1, y1, num_rows, num_cols, cell_size_x,cell_size_y,win=None):
+        if (num_rows < 1) or (num_cols < 1):
+            raise ValueError("Invalid number of rows or columns")
         self._x1 = x1
         self._y1 = y1
         self._num_rows = num_rows
@@ -16,6 +18,9 @@ class Maze():
     def _create_cells(self):
         # Initialize the maze of cells:
         self._cells = []
+        if (self._num_rows == 0) or (self._num_cols == 0):
+            return
+        # Populate the maze with default cells:
         for col in range(0,self._num_cols):
             row_of_cells = []
             for row in range(0,self._num_rows):
@@ -27,6 +32,8 @@ class Maze():
                 self._draw_cell(col, row)
         
     def _draw_cell(self, i, j):
+        if self._win is None:
+            return
         # Cell class draw() method requires x-y
             # co-ords of tl and br corners:
         tl_x = self._x1 + (i * self._cell_size_x)
