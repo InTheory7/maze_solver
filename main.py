@@ -5,7 +5,7 @@ from maze import Maze
 
 def main():
     # Create window
-    win = Window(800, 600)
+    win = Window(1024,720)
 
     # Draw some lines:
     # pt1 = Point(100,150)
@@ -38,13 +38,12 @@ def main():
     # cell1.draw_move(cell2, True)    # Grey
      
     # Create a maze:
-    x1, y1 = (5,5)
-    num_rows = 5
-    num_cols = 5
+    x1, y1 = (10,10)
+    num_rows = 6
+    num_cols = 6
     cell_size_x = 40
     cell_size_y = 40
     maze = Maze(x1, y1, num_rows, num_cols, cell_size_x,cell_size_y,win)
-    maze._break_entrance_and_exit()
 
     # Wait for window to close
     win.wait_for_close()

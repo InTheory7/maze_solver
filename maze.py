@@ -14,6 +14,7 @@ class Maze():
         self._win = win
 
         self._create_cells()
+        self._break_entrance_and_exit()
 
     def _create_cells(self):
         # Initialize the maze of cells:

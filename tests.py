@@ -70,7 +70,7 @@ class Tests(unittest.TestCase):
         num_cols = 5
         num_rows = 4
         m1 = Maze(10, 10, num_rows, num_cols, 10, 10)
-        m1._break_entrance_and_exit()
+        # m1._break_entrance_and_exit()
         self.assertEqual(
             m1._cells[0][0].top_wall,
             False,
