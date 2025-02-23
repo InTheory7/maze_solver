@@ -66,7 +66,7 @@ class Maze():
         while True:
             next_index_list = []
 
-            # Determine whuich cells to visit next
+            # Determine which cells to visit next
             # Left
             if i > 0 and not self._cells[i - 1][j].visited:
                 next_index_list.append((i-1, j))
@@ -92,20 +92,20 @@ class Maze():
             # Knock out walls between this cell and the next cell(s):
             # Right
             if next_index[0] == i + 1:
-                self._cells[i][j].has_right_wall = False
-                self._cells[i + 1][j].has_left_wall = False
+                self._cells[i][j].right_wall = False
+                self._cells[i + 1][j].left_wall = False
             # left
             if next_index[0] == i - 1:
-                self._cells[i][j].has_left_wall = False
-                self._cells[i - 1][j].has_right_wall = False
+                self._cells[i][j].left_wall = False
+                self._cells[i - 1][j].right_wall = False
             # down
             if next_index[1] == j + 1:
-                self._cells[i][j].has_bottom_wall = False
-                self._cells[i][j + 1].has_top_wall = False
+                self._cells[i][j].bottom_wall = False
+                self._cells[i][j + 1].top_wall = False
             # up
             if next_index[1] == j - 1:
-                self._cells[i][j].has_top_wall = False
-                self._cells[i][j - 1].has_bottom_wall = False
+                self._cells[i][j].top_wall = False
+                self._cells[i][j - 1].bottom_wall = False
 
             # Recursively visit the next cell:
             self._break_walls_r(next_index[0], next_index[1])
