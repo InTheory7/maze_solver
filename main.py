@@ -39,8 +39,8 @@ def main():
      
     # Create a maze:
     x1, y1 = (10,10)
-    num_rows = 6
-    num_cols = 6
+    num_rows = 15
+    num_cols = 15
     cell_size_x = 40
     cell_size_y = 40
     maze = Maze(x1, y1, num_rows, num_cols, cell_size_x,cell_size_y,win,10)
