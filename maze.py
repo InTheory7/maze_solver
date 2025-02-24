@@ -17,8 +17,12 @@ class Maze():
             random.seed(seed)
 
         self._create_cells()
+        # Break the entrance and exit walls:
         self._break_entrance_and_exit()
+        # Break internal walls to create the maze structure:
         self._break_walls_r(0,0)
+        # Reset the visited property of all cells:
+        self._reset_cells_visited()
 
     def _create_cells(self):
         # Initialize the maze of cells:
@@ -109,3 +113,9 @@ class Maze():
 
             # Recursively visit the next cell:
             self._break_walls_r(next_index[0], next_index[1])
+
+    def _reset_cells_visited(self):
+        for col in self._cells:
+            for cell in col:
+                cell.visited = False
+        
